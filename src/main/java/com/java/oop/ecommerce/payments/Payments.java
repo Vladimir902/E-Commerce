@@ -1,6 +1,5 @@
 package com.java.oop.ecommerce.payments;
 
-import com.java.oop.ecommerce.orders.Orders;
 
 public abstract class Payments {
 
