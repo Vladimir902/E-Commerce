@@ -1,5 +1,7 @@
 package com.java.oop.ecommerce.products;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Products {
@@ -10,14 +12,17 @@ public class Products {
 
 
     private double unitPrice;
-    private double totalPrice;
     private int quantity;
+    private List<Double> productPrices;
+    private double totalPrice;
 
 
     public Products(int productId, String productName, String category) {
         this.productId = productId;
         this.productName = productName;
         this.category = category;
+        this.productPrices = new ArrayList<>();
+        this.totalPrice = 0.0;
     }
 
     public int getProductId() {
@@ -44,25 +49,15 @@ public class Products {
         this.category = category;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-        calculateTotalPrice(); // Update the total price whenever quantity is set
+    // Method to add a product price
+    public void addProductPrice(double price) {
+        this.productPrices.add(price);
+        calculateTotalPrice(); // Update the total price whenever a new price is added
     }
 
-    // Setter for unit price
-    public void setUnitPrice(double unitPrice) {
-        this.unitPrice = unitPrice;
-        calculateTotalPrice(); // Update the total price whenever unit price is set
-    }
-
-    // Getter for quantity
-    public int getQuantity() {
-        return quantity;
-    }
-
-    // Getter for unit price
-    public double getUnitPrice() {
-        return unitPrice;
+    // Getter for product prices
+    public List<Double> getProductPrices() {
+        return productPrices;
     }
 
     // Getter for total price
@@ -70,9 +65,12 @@ public class Products {
         return totalPrice;
     }
 
-    // Method to calculate the total price
+    // Method to calculate the total price by summing up the prices of all products
     private void calculateTotalPrice() {
-        this.totalPrice = this.quantity * this.unitPrice;
+        this.totalPrice = 0.0;
+        for (double price : productPrices) {
+            this.totalPrice += price;
+        }
     }
 
 

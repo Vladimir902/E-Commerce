@@ -43,21 +43,21 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         // Create a Product object
-        Products product = new Products(3, "TV","Electronics");
+        Products product = new Products(3,"Phone", "devices");
 
-        // Prompt the user to enter the quantity
-        System.out.print("Enter the quantity: ");
-        int quantity = scanner.nextInt();
-        product.setQuantity(quantity); // Set the quantity using the setter
+        // Prompt the user to enter the number of products
+        System.out.print("Enter the number of products: ");
+        int numProducts = scanner.nextInt();
 
-        // Prompt the user to enter the unit price
-        System.out.print("Enter the unit price: ");
-        double unitPrice = scanner.nextDouble();
-        product.setUnitPrice(unitPrice); // Set the unit price using the setter
+        // Loop to read the price of each product and add it to the Product object
+        for (int i = 0; i < numProducts; i++) {
+            System.out.print("Enter the price of product " + (i + 1) + ": ");
+            double price = scanner.nextDouble();
+            product.addProductPrice(price); // Add the price using the method
+        }
 
         // Display the total price
-        System.out.println("Quantity: " + product.getQuantity());
-        System.out.println("Unit Price: $" + product.getUnitPrice());
+        System.out.println("Product Prices: " + product.getProductPrices());
         System.out.println("Total Price: $" + product.getTotalPrice());
 
 
