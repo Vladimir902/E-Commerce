@@ -14,7 +14,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
 //        Products p1 = new Products(1,"Laptop",599.99,"Electronics");
 //        System.out.println(p1);
 //
