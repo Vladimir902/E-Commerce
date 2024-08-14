@@ -1,3 +1,4 @@
+import com.java.oop.ecommerce.customers.CustomerOrder;
 import com.java.oop.ecommerce.orders.OrderService;
 import com.java.oop.ecommerce.orders.Orders;
 import com.java.oop.ecommerce.payments.CreditCardPayment;
@@ -51,7 +52,7 @@ public class Main {
 
         // Loop to read the price of each product and add it to the Product object
         for (int i = 0; i < numProducts; i++) {
-            System.out.print("Enter the price of product " + (i + 1) + ": ");
+            System.out.print("Enter the price of product " + ": ");
             double price = scanner.nextDouble();
             product.addProductPrice(price); // Add the price using the method
         }
@@ -59,6 +60,11 @@ public class Main {
         // Display the total price
         System.out.println("Product Prices: " + product.getProductPrices());
         System.out.println("Total Price: $" + product.getTotalPrice());
+
+
+        //accessing inherited method
+        CustomerOrder co = new CustomerOrder(1,"Jacob","jacob23@gmail.com","City Park 22", "Jelewery" ,"Marriage");
+        co.method();
 
 
 

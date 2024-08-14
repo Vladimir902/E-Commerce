@@ -9,9 +9,6 @@ public class Products {
     private double price;
     private String category;
 
-
-    private double unitPrice;
-    private int quantity;
     private List<Double> productPrices;
     private double totalPrice;
 
@@ -48,6 +45,8 @@ public class Products {
         this.category = category;
     }
 
+
+
     // Method to add a product price
     public void addProductPrice(double price) {
         this.productPrices.add(price);
@@ -71,8 +70,6 @@ public class Products {
             this.totalPrice += price;
         }
     }
-
-
 
 
 

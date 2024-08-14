@@ -3,7 +3,7 @@ package com.java.oop.ecommerce.orders;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Orders implements OrderManager{
+public class Orders implements OrderManager{  //demonstrating abstraction
     private int orderId;
     private String customer;
     public List<String> products;

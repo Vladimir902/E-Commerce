@@ -1,7 +1,7 @@
 package com.java.oop.ecommerce.payments;
 
 
-public abstract class Payments {
+public abstract class Payments {  //demonstrating abstraction
 
     private int paymentId;
     private String order;

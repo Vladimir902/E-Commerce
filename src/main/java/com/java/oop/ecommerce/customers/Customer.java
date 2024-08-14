@@ -13,4 +13,8 @@ public class Customer {
         this.email = email;
         this.address = address;
     }
+
+    public void method() {
+        System.out.println("This is a private method for inheritance");
+    }
 }
